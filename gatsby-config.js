@@ -1,34 +1,51 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Landing page | Juno`,
+    description: `Landing page desenvolvida para o processo de seleção da empresa Juno.`,
+    author: `@lipe.duarte`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: 'gatsby-background-image-es5',
+      options: {
+        // add your own characters to escape, replacing the default ':/'
+        specialChars: '/:',
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Juno`,
+        short_name: `Juno`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/juno-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        ignore: [`**/styles.js`]
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ // See below to configure properly
+        }
+      }
+    }
   ],
 }

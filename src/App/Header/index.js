@@ -9,7 +9,7 @@ import styled from 'styled-components'
 export const Nav = styled.nav`
   display: flex;
   justify-content: center;
-  @media(max-width: 1160px) {
+  @media(max-width: 1380px) {
     padding: 0 50px;
   }
   @media(max-width: 480px) {

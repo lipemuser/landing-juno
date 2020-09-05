@@ -9,8 +9,9 @@ export const Wrapper = styled.div`
   max-width: ${props => props.theme.maxWidth};
   justify-content: center;
   left: 0;
-  @media(max-width: 1160px) {
+  @media(max-width: 1380px) {
     padding: 0 50px;
+    margin-top: 45px;
   }
   @media(max-width: 480px) {
     padding: 0 18px;
@@ -28,14 +29,12 @@ export const H2 = styled.h2`
   line-height: 32px;
   width: 220px;
   @media(max-width: 880px) {
-    font-size: 40px;
-    line-height: 40px;
     font-feature-settings: 'pnum' on, 'lnum' on;
     width: 95%;
   }
 `;
 
-export const Ul = styled.li`
+export const Ul = styled.ul`
   color: ${props => props.theme.fontSecundaryColor};
   list-style-type: none;
   counter-increment: list;

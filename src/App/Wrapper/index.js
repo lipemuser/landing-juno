@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   font-family: var(--type-first);
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children }) => {  
 
   return (
     <>

@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   max-width: ${props => props.theme.maxWidth};
   justify-content: center;
   left: 0;
-  @media(max-width: 1160px) {
+  @media(max-width: 1380px) {
     padding: 0 50px;
   }
   @media(max-width: 480px) {
@@ -52,9 +52,7 @@ export const P = styled.p`
   }
 `;
 
-const BackgroundSection = ({ className, height }) => {
-
-    const [ backPosition, setBackPosition ] = React.useState('50%');
+const BackgroundSection = ({ className, height, backPosition }) => {
 
     const { desktopImage } = useStaticQuery(
       graphql`
@@ -71,15 +69,6 @@ const BackgroundSection = ({ className, height }) => {
     )
 
     const imageData = desktopImage.childImageSharp.fluid;
-
-    window.onresize = function() {
-      let mq = window.matchMedia( "(max-width: 860px)" );
-      if (mq.matches)
-          setBackPosition('70%');
-      else
-          setBackPosition('50%');
-
-    }
       
     return (
         <BackgroundImage
@@ -95,7 +84,6 @@ const BackgroundSection = ({ className, height }) => {
           justifyContent: 'center',
         }}
         >
-          
         <Wrapper className="wrapper-limit">
           <H1>Profissionalize seu negócio recebendo pagamentos por boleto</H1>
           <P>Na Juno você não precisa ter conta jurídica e nem carteira de cobrança junto ao banco para emitir boletos. Basta seu CPF. Simples assim!</P>

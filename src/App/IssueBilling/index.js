@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   max-width: ${props => props.theme.maxWidth};
   justify-content: center;
   left: 0;
-  @media(max-width: 1160px) {
+  @media(max-width: 1380px) {
     padding: 0 50px;
   }
   @media(max-width: 480px) {

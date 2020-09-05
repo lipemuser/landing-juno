@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from "prop-types"
 
 import styled from 'styled-components'
 
@@ -33,14 +32,6 @@ export const Button = ({children}) => {
     </DefaultButton>
   )
 
-}
-
-Button.defaultProps = {
-  title: ``,
-}
-
-Button.propTypes = {
-  description: PropTypes.string.isRequired,
 }
 
 export default Button

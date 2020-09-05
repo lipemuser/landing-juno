@@ -10,18 +10,21 @@ import Mobile from '../App/Banners/mobile'
 const IndexPage = () => {
   const [ backPosition, setBackPosition ] = React.useState('50%');
   const [ backMobilePosition, setBackMobilePosition ] = React.useState('50%');
-  const [ backWidth, setBackWidth ] = React.useState('50%');
+  const [ backWidth, setBackWidth ] = React.useState('100%');
 
   const verifyMatchMedia = function() {
 
     if (typeof window !== 'undefined') {
+      console.log('ent');
       let mq = window.matchMedia( "(max-width: 860px)" );
+      console.log(mq, mq.matches);
       if (mq.matches){
           setBackPosition('70%');
           setBackMobilePosition('37%');
           setBackWidth('100%');
       }
       else{
+        console.log('aqui carai');
           setBackPosition('50%');
           setBackMobilePosition('5%');
           setBackWidth('50%');
@@ -32,11 +35,9 @@ const IndexPage = () => {
 
   React.useMemo(() => verifyMatchMedia(), []);
 
-  React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', () => verifyMatchMedia());
-    }
-  }, []);
+  if (typeof window !== 'undefined') {
+    window.addEventListener('resize', () => verifyMatchMedia());
+  }
 
   return (
     <Wrapper>

@@ -71,7 +71,7 @@ export const P = styled.p`
   }
 `;
 
-const BackgroundSection = ({ className, height, backMobilePosition, backWidth }) => {
+const BackgroundSection = ({ className, height, backMobilePosition }) => {
 
     const { desktopImage } = useStaticQuery(
       graphql`
@@ -112,7 +112,6 @@ const BackgroundSection = ({ className, height, backMobilePosition, backWidth })
             height: height,
             display: 'flex',
             justifyContent: 'center',
-            width: backWidth,
           }}
           ></BackgroundImage>
         </Div>
@@ -129,4 +128,11 @@ BackgroundSection.propTypes = {
   height: PropTypes.string.isRequired,
 }
 
-export default BackgroundSection
+const StyledBackgroundSection = styled(BackgroundSection)`
+  width: 50%;
+  @media(max-width: 860px) {
+    width: 100%;
+  }
+`
+
+export default StyledBackgroundSection
